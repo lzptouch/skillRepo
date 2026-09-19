@@ -1,0 +1,20 @@
+{
+  "modules": [
+    {
+      "id": "<lang>/<name>",
+      "summary": "一句话说清「什么时候该用它」——这句是 AI 决定要不要引用你的依据",
+      "keywords": [
+        "<正式名>",
+        "<中文叫法>",
+        "<同义词>",
+        "<用户可能的错别字/口语叫法>"
+      ],
+      "path": "modules/<lang>/<name>",
+      "exports": ["<fn1>", "<fn2>"],
+      "test": "<可直接执行的测试命令>",
+      "used_by": ["<project-a>"],
+      "status": "stable",
+      "updated": "YYYY-MM-DD"
+    }
+  ]
+}

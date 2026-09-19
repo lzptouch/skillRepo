@@ -1,0 +1,28 @@
+id: <lang>/<name>
+status: incubating          # incubating | stable | deprecated
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+owner: <谁负责维护>
+used_by:                    # 三次法则的计数器，也是季度清理依据
+  - <project-a>
+flow: ../flows/<name>/flow.md    # 对应的流程契约，双向不漂移
+
+summary: 一句话说清「什么时候该用它」。
+
+interface:
+  # 从 flow.md 的 Interface 段抄，不要重写
+  <fnName>: (<args>) => <ReturnType>
+
+constraints:
+  - 禁止硬编码密钥，配置一律从环境变量注入
+  - 所有失败必须抛明确错误类型，禁止返回 null
+
+deps:
+  - name: <package>
+    version: <必须与资产库其他模块一致，不一致会导致重复安装>
+
+test_cmd: pnpm vitest run modules/<lang>/<name>
+coverage_threshold: 80      # A 类模块（安全 / 核心逻辑）要求 90
+
+changelog:
+  - YYYY-MM-DD 初始提取（来源项目：<project-a>）

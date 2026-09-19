@@ -1,0 +1,51 @@
+{
+  "$comment": "ui_lint.py 的配置文件。放到仓库根目录改名 ui_rules.json 或 .ui-lintrc.json 即可生效。",
+
+  "source_globs": [
+    "src/**/*.tsx", "src/**/*.jsx", "src/**/*.ts",
+    "app/**/*.tsx", "app/**/*.jsx",
+    "components/**/*.tsx",
+    "design-system/**/*.tsx",
+    "features/**/*.tsx",
+    "wireframe/**/*.tsx"
+  ],
+  "css_globs": ["**/*.css"],
+  "exclude_globs": [
+    "**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**",
+    "**/coverage/**", "**/*.stories.tsx"
+  ],
+
+  "design_system_dir": "design-system",
+  "design_system_pkg": "@/design-system",
+
+  "severity": {
+    "R001": "error",
+    "R002": "error",
+    "R003": "warn",
+    "R004": "error",
+    "R005": "error",
+    "R006": "warn",
+    "R007": "warn",
+    "R008": "warn",
+    "R009": "warn",
+    "R010": "warn",
+    "R011": "warn"
+  },
+
+  "$severity_note": "建议先只用 error 的三条（R001 裸色值 / R002 任意值 / R005 禁用 API）跑两周，团队适应后再把 warn 提升为 error。",
+
+  "allowed_tailwind_spacing": ["0", "0.5", "1", "2", "3", "4", "6", "8", "12"],
+  "allow_arbitrary_variant_prefix": true,
+
+  "banned_api": [
+    "window.confirm", "window.alert", "confirm(", "alert(", "prompt(",
+    "dangerouslySetInnerHTML", "eval("
+  ],
+
+  "raw_html_tags": [
+    "<table", "<thead", "<tbody", "<tr>", "<th>", "<td>",
+    "<button", "<input", "<select", "<textarea"
+  ],
+
+  "components_md": "COMPONENTS.md"
+}
